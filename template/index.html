@@ -1,0 +1,41 @@
+<header>
+  @include("/admin/topicpath.html")
+  <h1 class="acms-admin-admin-title js-dialog-title">
+    GA4掲載設定
+  </h1>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config -->
+<form action="" method="post" enctype="multipart/form-data" class="acms-admin-form">
+
+  <div class="js-acms_fix_marker acms_fix_bg">
+    <div class="acms_fix_bg_index">
+      <input type="submit" name="ACMS_POST_Config" value="<!--T-->保存<!--/T-->" class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save js-saving-splash"/>
+    </div>
+  </div>
+
+  <!-- BEGIN_IF [{notice_mess}/nem/] -->
+  <p class="acms-admin-alert acms-admin-alert-info acms-admin-alert-icon">
+    <span class="acms-admin-alert-icon-before acms-admin-icon-news"></span>
+    GA4設定を保存しました
+    <button class="js-acms-alert-close acms-admin-alert-icon-after acms-admin-margin-right-mini">×</button>
+  </p><!-- END_IF -->
+
+  <table class="acms-admin-table-admin-edit">
+    <tr>
+      <th>シークレットキー（JSONファイル）のパス</th>
+      <td>
+        <input type="text" name="google_application_credentials" value="{google_application_credentials}" class="acms-admin-form-width-full" />
+        <input type="hidden" name="config[]" value="google_application_credentials" />
+      </td>
+    </tr>
+    <tr>
+      <th>プロパティID</th>
+      <td>
+        <input type="text" name="ga4_property_id" value="{ga4_property_id}" class="acms-admin-form-width-full" />
+        <input type="hidden" name="config[]" value="ga4_property_id" />
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END_MODULE Admin_Config -->
