@@ -91,3 +91,9 @@ a-blog cmsのサイトにGoogle Analytics 4のランキングを表示するこ�
 </ul>
 <!-- END_MODULE GA4Ranking -->
 ```
+
+## 動かないときは
+
+* `PHP Fatal error: Uncaught Error: Call to undefined function Google\Protobuf\Internal\bccomp()` と表示される場合は `php-bcmath` をインストールしてください。
+* その他のエラーが表示される場合は、 `/extension/plugins/GA4/` に移動して `composer require google/analytics-data` でGoogleアナリティクスに関するコンポーネントを再インストールしてください。
+* Google Cloud Platform や Google Analytics 4 の仕様変更により動作しない場合がございます。
